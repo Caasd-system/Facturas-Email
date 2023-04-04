@@ -1,0 +1,17 @@
+{
+  "name": "sendemails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "emailBuilder.js",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "node-fetch": "^3.0.0",
+    "sib-api-v3-sdk": "^8.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
