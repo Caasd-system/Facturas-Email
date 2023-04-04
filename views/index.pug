@@ -1,0 +1,162 @@
+doctype html 
+html 
+-   var factura = clients_data.items;
+    head
+         style
+            include style.css
+    body 
+    div
+        div.factura-1rst-page 
+            div#factura-section-container
+                header.factura-template-header 
+                    img(src='/img/factura-header.jpg')
+            div.factura-tables-container 
+                table        
+                    tr
+                        td.codigo-sistema-background  Codigo Sistema:
+                        td=factura.id_contrato
+                    tr    
+                        td RNC
+                        td=factura.documento_identidad
+                    tr 
+                        td Nombre
+                        td=factura.nombre_cte
+                    tr 
+                        td Direccion 
+                        td=factura.direccion_cte
+                table 
+                    tr 
+                        td Tipo: 
+                        td=factura.tipo_comp
+                    tr
+                        td NCF: 
+                        td=factura.ncf
+                    tr 
+                        td Vencimiento 
+                        td=factura.fecha_venc_ncf
+                    tr 
+                        td Periodo 
+                        td= factura.periodo
+                    tr 
+                        td No.Factura 
+                        td=factura.documento
+                table.factura-dsf-table
+                    caption DETALLES SERVICIOS FACTURADOS
+                    tr  
+                        th Concepto
+                        th Cant.
+                        th Precio
+                        th Importe 
+                    each detalle in factura.detalle
+                        if detalle.basico == "A"
+                            tr 
+                                td=detalle.descripcion_producto1
+                                td=detalle.cantidad
+                                td=detalle.precio
+                                td=detalle.importe
+                table.factura-ddm-table
+                    Caption.align-caption-right DATOS DE MEDICION
+                    tr 
+                        td Lectura Anterior
+                        td=factura.lectura_anterior
+                        td Lectura Actual
+                        td=fecha_lectura
+                    tr 
+                        td Serial 
+                        td=factura.serial 
+                        td Consumo 
+                        td=factura.consumo
+                    tr 
+                        td Calibre 
+                        td=factura.calibre
+                    tr 
+                        td Marca 
+                        td=factura.medidor
+                    tr  
+                        td Tipo de Calculo 
+                        td=factura.metodo
+                table.factura-ts-table
+                    tr 
+                        th.squared-border A 
+                        th TOTAL SERVICIO 
+                        th=factura.monto_neto
+                table.factura-dds-table
+                    caption.align-caption-right  DATOS DEL SERVICIO
+                    tr  
+                        td Codigo Proceso 
+                        td=factura.codigo_proceso
+                    tr
+                        td Codigo Inmueble 
+                        td=factura.cod_inmueble
+                    tr 
+                        td Uso 
+                        td=factura.clase_servicio
+                    tr 
+                        td Cupo Básico (m3)
+                        td
+                    tr 
+                        td Unidades 
+                        td=factura.unidades
+                    tr 
+                        td Tarifa 
+                        td
+                        td Estrato 
+                        td=factura.estrato
+                div.factura-4th-section
+                table.factura-zona-table
+                    caption ZONA 
+                        tr 
+                        td=factura.zona 
+                table.factura-fv-table
+                    caption FECHA DE VENCIMIENTO 
+                        tr 
+                        td=factura.fecha_vencimiento
+                   
+                table.factura-oc-table
+                    caption OTROS CONCEPTOS
+                        tr 
+                            th Concepto
+                            th Cant.
+                            th Precio
+                            th Importe
+                        each detalle in factura.detalle
+                             if detalle.basico == "B"
+                                tr
+                                    td=detalle.descripcion_producto1
+                                    td=detalle.cantidad
+                                    td=detalle.precio
+                                    td=detalle.importe
+                table.factura-aviso-table
+                    caption.align-caption-right
+                    tr 
+                        td=factura.notas_1
+                div.ia-table-container
+                    p.total-otros-conceptos TOTAL OTROS CONCEPTOS
+                    span.squared-border B
+                    p TOTAL faCTURA MES A + B 
+                    span=factura.importe_total
+                    table.factura-ia-table
+                        caption INFORMACION ADICIONAL 
+                        tr  
+                            td Balance Anterior 
+                            td=factura.base_mora
+                        tr 
+                            td Fecha Ultimo Pago
+                            td=f_ult_pago
+                        tr 
+                            td Importe Ultimo Pago
+                            td=monto_ult_pago
+                    table.factura-notas-table
+
+
+                
+
+                     
+                    
+
+
+                    
+
+                    
+
+                    

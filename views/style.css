@@ -1,0 +1,352 @@
+﻿table {
+    margin-bottom: 20px;
+    font-size: 14px;
+    max-width: 50%;
+}
+
+caption, .table-ia-caption {
+    background-color: #266ba4;
+    color: #FFFFFF;
+    padding: 0;
+    text-align: center;
+    caption-side: unset;
+    margin-bottom: 5px;
+}
+
+.squared-border {
+    border: 1.5px solid #000000;
+    padding: 2px 7px;
+}
+
+.set-width-395 {
+    width: 395px;
+}
+
+.align-caption-right {
+    padding-right: 10px;
+    text-align: right;
+}
+
+body {
+    background: #525659;
+    cursor: default;
+    font-family: 'Open Sans', sans-serif;
+    overflow: auto;
+}
+
+.factura-1rst-page,
+.factura-2nd-page {
+    background: #FFF;
+    border-radius: 1px;
+    box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    width: 595pt;
+}
+
+.factura-1rst-page {
+    height: 841pt;
+}
+
+.factura-2nd-page {
+    height: 805pt;
+}
+
+.factura-template-header {
+    padding: 10px 0 0 2px;
+}
+
+    .factura-template-header img {
+        height: 90px;
+        width: 100%;
+    }
+
+.factura-tables-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-left: 2px;
+    width: 98%;
+}
+
+    .factura-dsf-table td,
+    .factura-oc-table td,
+    .factura-tables-container > table:nth-child(-n+2) td:nth-child(1),
+    .factura-ddm-table td:nth-child(odd),
+    .factura-dds-table td:nth-child(odd),
+    .factura-ia-table td:nth-child(1),
+    .factura-fdm-table td:nth-child(1),
+    .factura-da-table td:nth-child(1) {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    .factura-tables-container > table:nth-child(-n+2) {
+        min-width: 320px;
+    }
+
+.codigo-sistema-background {
+    background-color: #bfbfbf;
+    padding-left: 40px;
+}
+
+.factura-dsf-table th,
+.factura-oc-table th {
+    font-weight: normal;
+    height: 24px;
+}
+
+.factura-dsf-table,
+.factura-oc-table {
+    max-width: 350px;
+}
+
+    .factura-dsf-table td,
+    .factura-oc-table td {
+        font-size: 12px;
+        vertical-align: baseline;
+    }
+
+    .factura-dsf-table th:nth-child(-n+3),
+    .factura-oc-table th:nth-child(-n+3) {
+        border-right: 1.5px solid #000000a6;
+    }
+
+    .factura-dsf-table th,
+    .factura-oc-table th {
+        padding: 0 10px;
+    }
+
+.factura-ddm-table tr {
+    font-size: 12px;
+}
+
+.factura-ddm-table td:nth-child(2) {
+    padding-right: 15px;
+}
+
+.factura-ts-table {
+    font-size: 17px;
+}
+
+    .factura-ts-table th,
+    .factura-da-table td,
+    .logo-caasd-blanco {
+        vertical-align: baseline;
+    }
+
+        .factura-ts-table th:nth-child(n+2) {
+            padding: 0 20px;
+        }
+
+.factura-ts-table,
+.factura-dds-table {
+    margin-top: 10px;
+}
+
+    .factura-dds-table td {
+        font-size: 12px;
+    }
+
+.factura-4th-section {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.factura-zona-table caption,
+.factura-fv-table caption {
+    width: 195px;
+    margin-left: 5px;
+}
+
+.factura-zona-table td,
+.factura-fv-table td {
+    text-align: center;
+}
+
+.factura-oc-table,
+.factura-aviso-table {
+    margin: 40px 0px 25px 0px
+}
+
+    .factura-aviso-table td,
+    .factura-notas-table {
+        font-size: 10px;
+        padding: 20px 60px 10px 30px;
+    }
+
+.factura-notas-table {
+    margin-bottom: 15px;
+}
+
+.ia-table-container p {
+    font-weight: bold;
+    margin: 0 10px 10px 5px;
+}
+
+.total-otros-conceptos span {
+    margin-right: 20px;
+}
+
+.total-otros-conceptos + p,
+.total-otros-conceptos + p span {
+    margin-left: 40px;
+}
+
+.table-ia-caption {
+    text-align: center;
+    width: 325px;
+}
+
+.factura-last-section {
+    margin: 5px 0 0 15px;
+}
+
+.last-section-titles {
+    flex-basis: 100%;
+    display: inline-flex;
+}
+
+    .last-section-titles span {
+        font-size: 16px;
+        text-align: left;
+        font-weight: bold;
+        width: 50%;
+    }
+
+        .last-section-titles span:nth-child(1) {
+            color: #bddbf4;
+        }
+
+        .last-section-titles span:nth-child(2) {
+            color: #fbbbc3;
+        }
+
+.da-table-container {
+    padding-left: 5px;
+}
+
+.factura-last-section {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.fdm-table-container,
+.da-table-container {
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 4px 10px 0 10px;
+    width: 50%;
+}
+
+.fdm-table-container,
+.da-table-container {
+    height: 100%;
+}
+
+.fdm-table-container {
+    background: #b7dbff;
+}
+
+.da-table-container {
+    background-color: #ffbabb;
+}
+
+.factura-last-section td {
+    font-size: 10px;
+}
+
+.factura-da-table tr:nth-child(-n+4) {
+    height: 18px;
+}
+
+.factura-da-table tr:nth-child(5) {
+    height: max-content;
+}
+
+.mini-logo-caasd {
+    width: 60px;
+    border-right: 1.5px solid #e91f26a6;
+    padding-right: 5px;
+    margin-right: 2px;
+}
+
+.mini-texto-logo {
+    width: 100px;
+}
+
+.factura-last-section p {
+    font-size: 8px;
+    margin: 0;
+}
+
+.factura-total-last-section {
+    padding-top: 60px;
+}
+
+    .factura-total-last-section p {
+        text-align: center;
+        padding: 1px 0;
+    }
+
+        .factura-total-last-section p:nth-child(1) {
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .factura-total-last-section p:nth-child(2) {
+            background-color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+.factura-2nd-page img {
+    height: 100%;
+    width: 100%;
+}
+
+.close-and-download {
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    top: 20px;
+    z-index: 100;
+}
+
+    .close-and-download i {
+        border-radius: 50%;
+        box-shadow: 1px 1px 3px #00000033;
+        font-size: 24px;
+        padding: 13px;
+        transition: .2s;
+        width: 53px;
+    }
+
+#close-button {
+    margin-bottom: 10px;
+}
+
+#close-button {
+    background-color: #FF4444;
+    color: #FFFFFF;
+}
+
+    #close-button:hover {
+        background-color: #fa2d2d;
+    }
+
+#download-button {
+    background-color: #F2F2F2;
+    color: #8D8D8D;
+}
+
+    #download-button:hover {
+        background-color: #4169e1;
+        color: #FFFFFF;
+    }
