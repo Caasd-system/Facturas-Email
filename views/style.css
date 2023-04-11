@@ -1,4 +1,5 @@
-﻿table {
+﻿
+table {
     margin-bottom: 20px;
     font-size: 14px;
     max-width: 50%;
@@ -167,6 +168,10 @@ body {
 .factura-fv-table td {
     text-align: center;
 }
+.factura-notas-table,
+.factura-aviso-table{
+    width: 395px;
+}
 
 .factura-oc-table,
 .factura-aviso-table {
@@ -238,10 +243,10 @@ body {
 
 .fdm-table-container,
 .da-table-container {
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
-    padding: 4px 10px 0 10px;
-    width: 50%;
+    flex-basis: max-content;
+    width: 100%;
 }
 
 .fdm-table-container,
