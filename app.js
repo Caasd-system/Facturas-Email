@@ -12,7 +12,10 @@ import fs from 'fs'
 
     }
 
-
+    
+  
+  
+      
     function compilePugToHtml(file) {
       return pug.renderFile(file, recursos);
     }

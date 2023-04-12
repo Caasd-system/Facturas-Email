@@ -41,91 +41,92 @@ html
                         td #{data.documento}
                 table.factura-dsf-table
                     caption DETALLES SERVICIOS FACTURADOS
-                //-     tr  
-                //-         th Concepto
-                //-         th Cant.
-                //-         th Precio
-                //-         th Importe 
-                //-     each detalle in detalle
-                //-         if detalle.basico == "A"
-                //-             tr 
-                //-                 td #{detalle.descripcion_producto1}
-                //-                 td #{detalle.cantidad}
-                //-                 td #{detalle.precio}
-                //-                 td #{detalle.importe}
-                //- table.factura-ddm-table
-                //-     Caption.align-caption-right DATOS DE MEDICION
-                //-     tr 
-                //-         td Lectura Anterior
-                //-         td #{lectura_anterior}
-                //-         td Lectura Actual
-                //-         td #{fecha_lectura}
-                //-     tr 
-                //-         td Serial 
-                //-         td #{serial} 
-                //-         td Consumo 
-                //-         td #{consumo}
-                //-     tr 
-                //-         td Calibre 
-                //-         td #{calibre}
-                //-     tr 
-                //-         td Marca 
-                //-         td #{medidor}
-                //-     tr  
-                //-         td Tipo de Calculo 
-                //-         td #{metodo}
-                //- table.factura-ts-table
-                //-     tr 
-                //-         th 
-                //-             span.squared-border A 
-                //-         th TOTAL SERVICIO 
-                //-         th #{monto_neto}
-                //- table.factura-dds-table
-                //-     caption.align-caption-right  DATOS DEL SERVICIO
-                //-     tr  
-                //-         td Codigo Proceso 
-                //-         td #{codigo_proceso}
-                //-     tr
-                //-         td Codigo Inmueble 
-                //-         td #{cod_inmueble}
-                //-     tr 
-                //-         td Uso 
-                //-         td #{clase_servicio}
-                //-     tr 
-                //-         td Cupo Básico (m3)
-                //-         td
-                //-     tr 
-                //-         td Unidades 
-                //-         td #{unidades}
-                //-     tr 
-                //-         td Tarifa 
-                //-         td
-                //-         td Estrato 
-                //-         td #{estrato}
-                //- div.factura-4th-section
-                //-     table.factura-zona-table 
-                //-         caption ZONA 
-                //-         tr 
-                //-             td #{zona}
-                //-     table.factura-fv-table
-                //-         caption FECHA VENCIMIENTO
-                //-         tr 
-                //-             td #{fecha_vencimiento}
-                //- table.factura-oc-table
-                //-     caption OTROS CONCEPTOS 
-                //-         tr 
-                //-             th Concepto
-                //-             th Cant.
-                //-             th Precio
-                //-             th Importe
-                //-         each detalle in detalle
-                //-             if detalle.basico == "B"
-                //-                 tr 
-                //-                     td #{detalle.descripcion_producto1}
-                //-                     td #{detalle.cantidad}
-                //-                     td #{detalle.precio}
-                //-                     td #{detalle.importe}
-                //- table.factura-aviso-table
+                    tr  
+                        th Concepto
+                        th Cant.
+                        th Precio
+                        th Importe 
+                    each detalle in data.detalle
+                        if detalle.basico == "A"
+                            tr 
+                                td #{detalle.descripcion_producto1}
+                                td #{detalle.cantidad}
+                                td #{detalle.precio}
+                                td #{detalle.importe}
+                table.factura-ddm-table
+                    Caption.align-caption-right DATOS DE MEDICION
+                    tr 
+                        td Lectura Anterior
+                        td #{data.lectura_anterior}
+                        td Lectura Actual
+                        td #{data.fecha_lectura}
+                    tr 
+                        td Serial 
+                        td #{data.serial} 
+                        td Consumo 
+                        td #{data.consumo}
+                    tr 
+                        td Calibre 
+                        td #{data.calibre}
+                    tr 
+                        td Marca 
+                        td #{data.medidor}
+                    tr  
+                        td Tipo de Calculo 
+                        td #{data.metodo}
+                table.factura-ts-table
+                    tr 
+                        th 
+                            span.squared-border A 
+                        th TOTAL SERVICIO 
+                        th #{data.monto_neto}
+                table.factura-dds-table
+                    caption.align-caption-right  DATOS DEL SERVICIO
+                    tr  
+                        td Codigo Proceso 
+                        td #{data.codigo_proceso}
+                    tr
+                        td Codigo Inmueble 
+                        td #{data.cod_inmueble}
+                    tr 
+                        td Uso 
+                        td #{data.clase_servicio}
+                    tr 
+                        td Cupo Básico (m3)
+                        td
+                    tr 
+                        td Unidades 
+                        td #{data.unidades}
+                    tr 
+                        td Tarifa 
+                        td
+                        td Estrato 
+                        td #{data.estrato}
+                div.factura-4th-section
+                    table.factura-zona-table 
+                        caption ZONA 
+                        tr 
+                            td #{data.zona}
+                    table.factura-fv-table
+                        caption FECHA VENCIMIENTO
+                        tr 
+                            td #{data.fecha_vencimiento}
+                table.factura-oc-table
+                    caption OTROS CONCEPTOS 
+                        tr 
+                            th Concepto
+                            th Cant.
+                            th Precio
+                            th Importe
+                        each detalle in data.detalle
+                            if detalle.basico == "B"
+                                tr 
+                                    td #{detalle.descripcion_producto1}
+                                    td #{detalle.cantidad}
+                                    td #{detalle.precio}
+                                    td #{detalle.importe}
+                     
+                     //- table.factura-aviso-table
                 //-     caption.align-caption-right AVISO 
                 //-         tr 
                 //-             td #{notas_1}
@@ -207,17 +208,6 @@ html
                 //-             div 
                 //-                 p TOTAL DEUDA ANTERIOR
                 //-                 p saldo_anterior  
-                                      
-        
-
-                                
-                   
-                    
-        
-                
-
-                     
-                    
 
 
                     
