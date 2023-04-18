@@ -8,7 +8,7 @@ html
         div.factura-1rst-page 
             div#factura-section-container
                 header.factura-template-header 
-                    img(src='/img/factura-header.jpg')
+                    img(src=imgHeader)
             div.factura-tables-container 
                 table        
                     tr
@@ -55,31 +55,31 @@ html
                                 td #{detalle.importe}
                 table.factura-ddm-table
                     Caption.align-caption-right DATOS DE MEDICION
-                    tr 
-                        td Lectura Anterior
-                        td #{data.lectura_anterior}
-                        td Lectura Actual
-                        td #{data.fecha_lectura}
-                    tr 
-                        td Serial 
-                        td #{data.serial} 
-                        td Consumo 
-                        td #{data.consumo}
-                    tr 
-                        td Calibre 
-                        td #{data.calibre}
-                    tr 
-                        td Marca 
-                        td #{data.medidor}
-                    tr  
-                        td Tipo de Calculo 
-                        td #{data.metodo}
+                        tr 
+                            td Lectura Anterior
+                            td #{data.lectura_anterior}
+                            td Lectura Actual
+                            td #{data.fecha_lectura}
+                        tr 
+                            td Serial 
+                            td #{data.serial} 
+                            td Consumo 
+                            td #{data.consumo}
+                        tr 
+                            td Calibre 
+                            td #{data.calibre}
+                        tr 
+                            td Marca 
+                            td #{data.medidor}
+                        tr  
+                            td Tipo de Calculo 
+                            td #{data.metodo}
                 table.factura-ts-table
                     tr 
                         th 
                             span.squared-border A 
-                        th TOTAL SERVICIO 
-                        th #{data.monto_neto}
+                            th TOTAL SERVICIO 
+                            th #{data.monto_neto}
                 table.factura-dds-table
                     caption.align-caption-right  DATOS DEL SERVICIO
                     tr  
@@ -125,92 +125,89 @@ html
                                     td #{detalle.cantidad}
                                     td #{detalle.precio}
                                     td #{detalle.importe}
-                     
-                     //- table.factura-aviso-table
-                //-     caption.align-caption-right AVISO 
-                //-         tr 
-                //-             td #{notas_1}
-                //- div.ia-table-container
-                //- p.total-otros-conceptos  TOTAL OTROS CONCEPTOS
-                //-     span.squared-border B 
-                //- p TOTAL FACTURA MES A+B 
-                //-     span #{importe_total}
-                //- table.factura-ia-table
-                //-     caption.table-ia-caption  INFORMACION ADICIONAL
-                //-     tr 
-                //-         td Blance Anterior
-                //-         td #{base_mora}
-                //-     tr 
-                //-         td Fecha Ultimo Pago
-                //-         td #{fecha_ultimo_pago}
-                //-     tr 
-                //-         td Importe Ultimo Pago 
-                //-         td #{monto_ult_pago}
-                //- table.factura-notas-table
-                //-     caption  NOTAS 
-                //-     tr  
-                //-         td #{notas_2}
-                //- div.factura-last-section
-                //-     div.last-section-titles
-                //-         span FACTURA DEL MES
-                //-         span DEUDA ANTERIOR
-                //-     div.fdm-table-container
-                //-         table.factura-fdm-table
-                //-             tr  
-                //-                 td Nombre 
-                //-                 td #{nombre_cte}
-                //-             tr 
-                //-                 td Codigo Sistema
-                //-                 td #{id_contrato}
-                //-             tr 
-
-                //-                 td Codigo Proceso
-                //-                 td #{codigo_proceso}
-                //-             tr 
-                //-                 td Fecha Emision
-                //-                 td #{fecha_documento}
-                //-             tr 
-                //-                 td Factura No.
-                //-                 td #{documento}
-                //-             tr 
-                //-                 td  Periodo
-                //-                 td #{periodo}
-                //-             tr 
-                //-                 td Vencimiento 
-                //-                 td #{fecha_vencimiento}
-                //-             tr 
-                //-                 td sello y Firma 
-                //-                 td       
-                //-         div 
-                //-             img.mini-logo-caasd(src="/img/logo-caasd-azul.png")
-                //-             span 
-                //-                 img.mini-texto-logo(src="/img/texto-logo-caasd-azul.png")
-                //-             p Favor no colocar sellos sobre el codigo de barras
-                //-             div.factura-total-last-section
-                //-                 p TOTAL FACTURA
-                //-                 p #{importe_total}
-                //-     div.da-table-container
-                //-         table.factura-da-table
-                //-             tr  
-                //-                 td Nombre 
-                //-                 td #{nombre_cte}
-                //-             tr
-                //-                 td Codigo Sistema
-                //-                 td #{id_contrato}                
-                //-             tr 
-                //-                 td sello y Firma 
-                //-                 td   
-                //-         div 
-                //-             img.mini-logo-caasd(src="/img/logo-caasd-azul.png")
-                //-             span 
-                //-                 img.mini-texto-logo(src="/img/texto-logo-caasd-azul.png")
-                //-                 p Favor no colocar sellos sobre el codigo de barras
-                //-             div 
-                //-                 p TOTAL DEUDA ANTERIOR
-                //-                 p saldo_anterior  
-
-
-                    
+                table.factura-aviso-table
+                    caption.align-caption-right AVISO 
+                        tr 
+                            td #{data.notas_1}
+                div.ia-table-container
+                    span.squared-border B 
+                    span.total-otros-conceptos  TOTAL OTROS CONCEPTOS
+                    p TOTAL FACTURA MES A+B 
+                        span #{data.importe_total}
+            table.factura-ia-table
+                caption.table-ia-caption  INFORMACION ADICIONAL
+                    tr 
+                        td Blance Anterior
+                        td #{data.base_mora}
+                    tr 
+                        td Fecha Ultimo Pago
+                        td #{data.fecha_ultimo_pago}
+                    tr 
+                        td Importe Ultimo Pago 
+                        td #{data.monto_ult_pago}
+                        table.factura-notas-table
+                            caption  NOTAS 
+                            tr  
+                                td #{data.notas_2}
+            div.factura-last-section
+                div.last-section-titles
+                    span FACTURA DEL MES
+                    span DEUDA ANTERIOR
+            div.fdm-table-container
+                table.factura-fdm-table
+                    tr  
+                        td Nombre 
+                        td #{data.nombre_cte}
+                    tr 
+                        td Codigo Sistema
+                        td #{data.id_contrato}
+                    tr
+                        td Codigo Proceso
+                        td #{data.codigo_proceso}
+                    tr 
+                        td Fecha Emision
+                        td #{data.fecha_documento}
+                    tr 
+                        td Factura No.
+                        td #{data.documento}
+                    tr 
+                        td  Periodo
+                        td #{data.periodo}
+                    tr 
+                        td Vencimiento 
+                        td #{data.fecha_vencimiento}
+                    tr 
+                        td sello y Firma 
+                 
+                div 
+                    img.mini-logo-caasd(src="/img/logo-caasd-azul.png")
+                    img.mini-texto-logo(src="/img/texto-logo-caasd-azul.png")
+                    p Favor no colocar sellos sobre el codigo de barras
+                    div.factura-total-last-section
+                        p TOTAL FACTURA
+                        p #{data.importe_total}          
+                div.da-table-container
+                    table.factura-da-table
+                        tr
+                            td Nombre 
+                            td #{data.nombre_cte}
+                        tr
+                            td Codigo Sistema
+                            td #{data.id_contrato}                
+                        tr 
+                            td sello y Firma 
+                            td 
+                    div 
+                        img.mini-logo-caasd(src="/img/logo-caasd-azul.png")
+                        img.mini-texto-logo(src="/img/texto-logo-caasd-azul.png")
+                        p Favor no colocar sellos sobre el codigo de barras
+                        div.factura-total-last-section 
+                            p TOTAL DEUDA ANTERIOR
+                            p #{data.saldo_anterior}   
+            <div class="factura-2nd-page">
+                <img src="/img/factura-2nd-page.jpg" alt="">
+            </div>                             
+                          
 
                     
 
