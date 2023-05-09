@@ -1,0 +1,720 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+    
+table {
+    margin-bottom: 20px;
+    font-size: 14px;
+    /* max-width: 50%; */
+}
+
+caption, .table-ia-caption {
+    background-color: #266ba4;
+    color: #FFFFFF;
+    padding: 0;
+    text-align: center;
+    caption-side: unset;
+    margin-bottom: 5px;
+}
+
+.squared-border {
+    border: 1px solid #000000;
+    padding: 2px 4px;
+    
+}
+
+.set-width-395 {
+    width: 395px;
+}
+
+.align-caption-right {
+    padding-right: 10px;
+    text-align: right;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    font-family: 'Open Sans', sans-serif;
+    overflow: auto;
+}
+
+.factura-1rst-page,
+.factura-2nd-page {
+    background: #FFF;
+    border-radius: 1px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    /* width: 595pt; */
+}
+
+
+.factura-2nd-page {
+    height: 805pt;
+}
+.factura-2nd-page img{
+    width:820px; 
+    height:1370px; 
+}
+
+.factura-template-header {
+    padding: 10px 0 0 2px;
+   
+}
+
+.factura-template-header img {
+    height: 90px;
+    width: 100%;
+}   
+
+.factura-tables-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-left: 2px;
+    width: 98%;
+}
+
+    .factura-dsf-table td,
+    .factura-oc-table td,
+    .factura-tables-container > table:nth-child(-n+2) td:nth-child(1),
+    .factura-ddm-table td:nth-child(odd),
+    .factura-dds-table td:nth-child(odd),
+    .factura-ia-table td:nth-child(1),
+    .factura-fdm-table td:nth-child(1),
+    .factura-da-table td:nth-child(1) {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    .factura-tables-container > table:nth-child(-n+2) {
+        min-width: 320px;
+    }
+
+.codigo-sistema-background {
+    background-color: #bfbfbf;
+    padding-left: 40px;
+}
+
+.factura-dsf-table th,
+.factura-oc-table th {
+    font-weight: normal;
+    height: 24px;
+}
+
+.factura-dsf-table,
+.factura-oc-table {
+    max-width: 350px;
+}
+
+    .factura-dsf-table td,
+    .factura-oc-table td {
+        font-size: 12px;
+        vertical-align: baseline;
+    }
+
+    .factura-dsf-table th:nth-child(-n+3),
+    .factura-oc-table th:nth-child(-n+3) {
+        border-right: 1.5px solid #000000a6;
+    }
+
+    .factura-dsf-table th,
+    .factura-oc-table th {
+        padding: 0 10px;
+    }
+
+.factura-ddm-table tr {
+    font-size: 12px;
+}
+
+.factura-ddm-table td:nth-child(2) {
+    padding-right: 15px;
+}
+
+.factura-ts-table {
+    font-size: 17px;
+}
+
+    .factura-ts-table th,
+    .factura-da-table td,
+    .logo-caasd-blanco {
+        vertical-align: baseline;
+    }
+
+        .factura-ts-table th:nth-child(n+2) {
+            padding: 0 20px;
+        }
+
+.factura-ts-table,
+.factura-dds-table {
+    margin-top: 10px;
+}
+
+    .factura-dds-table td {
+        font-size: 12px;
+    }
+
+.factura-4th-section {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.factura-zona-table caption,
+.factura-fv-table caption {
+    width: 195px;
+    margin-left: 5px;
+}
+
+.factura-zona-table td,
+.factura-fv-table td {
+    text-align: center;
+}
+.factura-notas-table,
+.factura-aviso-table{
+    width: 395px;
+}
+
+.factura-oc-table,
+.factura-aviso-table {
+    margin: 40px 0px 25px 0px
+}
+
+    .factura-aviso-table td,
+    .factura-notas-table {
+        font-size: 10px;
+        padding: 20px 60px 10px 30px;
+    }
+
+.factura-notas-table {
+    margin-bottom: 15px;
+}
+
+.ia-table-container p {
+    font-weight: bold;
+    margin: 0 10px 10px 5px;
+}
+
+.total-otros-conceptos span {
+    margin-right: 20px;
+}
+
+.total-otros-conceptos + p,
+.total-otros-conceptos + p span {
+    margin-left: 40px;
+}
+
+.table-ia-caption {
+    text-align: center;
+    width: 325px;
+}
+
+.factura-last-section {
+    margin: 5px 0 0 15px;
+}
+
+.last-section-titles {
+    flex-basis: 100%;
+    display: inline-flex;
+}
+
+    .last-section-titles span {
+        font-size: 16px;
+        text-align: left;
+        font-weight: bold;
+        width: 50%;
+    }
+
+        .last-section-titles span:nth-child(1) {
+            color: #bddbf4;
+        }
+
+        .last-section-titles span:nth-child(2) {
+            color: #fbbbc3;
+        }
+
+.da-table-container {
+    padding-left: 5px;
+}
+
+.factura-last-section {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.fdm-table-container,
+.da-table-container {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: max-content;
+    width: 100%;
+}
+
+.fdm-table-container,
+.da-table-container {
+   
+}
+
+.fdm-table-container {
+    background: #b7dbff;
+}
+
+.da-table-container {
+    background-color: #ffbabb;
+}
+
+.factura-last-section td {
+    font-size: 10px;
+}
+
+.factura-da-table tr:nth-child(-n+4) {
+    height: 18px;
+}
+
+.factura-da-table tr:nth-child(5) {
+    height: max-content;
+}
+
+.mini-logo-caasd {
+    width: 60px;
+    border-right: 1.5px solid #e91f26a6;
+    padding-right: 5px;
+    margin-right: 2px;
+}
+
+.mini-texto-logo {
+    width: 100px;
+}
+
+.factura-last-section p {
+    font-size: 8px;
+    margin: 0;
+}
+
+.factura-total-last-section {
+    padding-top: 60px;
+}
+
+    .factura-total-last-section p {
+        text-align: center;
+        padding: 1px 0;
+    }
+
+        .factura-total-last-section p:nth-child(1) {
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .factura-total-last-section p:nth-child(2) {
+            background-color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+.factura-2nd-page img {
+    height: 100%;
+    width: 100%;
+}
+
+.close-and-download {
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    top: 20px;
+    z-index: 100;
+}
+
+    .close-and-download i {
+        border-radius: 50%;
+        box-shadow: 1px 1px 3px #00000033;
+        font-size: 24px;
+        padding: 13px;
+        transition: .2s;
+        width: 53px;
+    }
+
+#close-button {
+    margin-bottom: 10px;
+}
+
+#close-button {
+    background-color: #FF4444;
+    color: #FFFFFF;
+}
+
+    #close-button:hover {
+        background-color: #fa2d2d;
+    }
+
+#download-button {
+    background-color: #F2F2F2;
+    color: #8D8D8D;
+}
+
+    #download-button:hover {
+        background-color: #4169e1;
+        color: #FFFFFF;
+    }
+
+    .final-factura-container{
+        display: flex;
+    }
+
+    .blue{
+        background-color: #b7dbff;
+        display: flex;
+        flex-direction: row;   
+        width: 50%;
+        margin:5px;
+        padding: 5px;
+    }
+
+    .blue-total{
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;    
+    }
+
+      .blue-total P{
+        font-size: 15px ;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+        width: 80%;
+    }
+
+    .orange{
+        background-color:#ffbabb;
+        display: flex;
+        flex-direction:row;   
+        width: 50%;
+        margin:5px;
+        padding: 5px;
+       
+    }
+
+    .orange table{
+        height: 20%;
+        font-size: 12px;
+    }
+
+    .logo-element,
+    .logo-element  {
+        font-size: 10px;
+        display: block;
+    }
+
+    .orange-total{
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;    
+    }
+  
+    .orange-total P{
+        font-size: 12px ;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+        width: 80%;
+    }
+
+
+    .background-white{
+        background-color: #FFF;
+    }
+</style>
+
+<div id="factura-sections-container">
+    <div id="factura-1rst-page" class="factura-1rst-page">
+        <header class="factura-template-header">
+            <img width="100%" src="data:image/png;base64,{{factura.imgHeader}}" alt="Logo" />
+        </header>
+        <div class="factura-tables-container">
+            <table>
+                <tr>
+                    <td class="codigo-sistema-background">Codigo sistema</td>
+                    <td id="id_contrato">{{factura.id_contrato}}</td>
+                </tr>
+                <tr>
+                    <td>RNC</td>
+                    <td id="documento_identidad">{{factura.documento_identidad}}</td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td id="nombre_cte">{{factura.nombre_cte}}</td>
+                </tr>
+                <tr>
+                    <td>Dirección</td>
+                    <td id="direccion_cte">{{factura.direccion_cte}}</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>Tipo</td>
+                    <td id="tipo_comp">{{factura.tipo_comp}}</td>
+                </tr>
+                <tr>
+                    <td>NFC</td>
+                    <td id="ncf">{{factura.ncf}}</td>
+                </tr>
+                <tr>
+                   
+                    <td>Vencimiento</td>
+                    <td id="fecha-venc-ncf">{{fecha_venc_ncf}}</td>
+                </tr>
+                <tr>
+                    <td>Periodo</td>
+                    <td id="periodo">{{factura.periodo}}</td>
+                </tr>
+                <tr>
+                    <td>No. Factura</td>
+                    <td id="documento">{{factura.documento}}</td>
+                </tr>
+            </table>
+            <table class="factura-dsf-table" id="dsf-table-content">
+                <caption>DETALLES SERVICIOS FACTURADOS</caption>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Cant.</th>
+                    <th>Precio</th>
+                    <th>Importe</th>
+                </tr>
+                {{#each detallesa}}
+                <tr>
+                    <td>{{descripcion_producto1}}</td>
+                    <td>{{cantidad}}</td>
+                    <td>{{precio}}</td>
+                    <td>{{importe}}</td>
+                </tr>
+                {{/each}}
+            </table>
+            <table class="factura-ddm-table set-width-395">
+                <caption class="align-caption-right">DATOS DE MEDICION</caption>
+                <tr>
+                    <td>Lectura Anterior</td>
+                    <td id="lectura_anterior">{{factura.lectura_anterior}}</td>
+                    <td>Lectura Actual</td>
+                    <td id="lectura">{{fecha_lectura}}</td>
+                </tr>
+                <tr>
+    
+                    <td>Fecha Lect. Anterior</td>
+                    <td id="fecha_lectura_ant">{{factura.fecha_lectura_ant}}</td>
+                    <td>Fecha Lect. Actual</td>
+                    <td id="fecha_lectura">{{fecha_lectura}}</td>
+                </tr>
+                <tr>
+                    <td>Serial</td>
+                    <td id="serial">{{factura.serial}}</td>
+                    <td>Consumo</td>
+                    <td id="consumo">{{factura.consumo}}</td>
+                </tr>
+                <tr>
+                    <td>Calibre</td>
+                    <td id="calibre">{{factura.calibre}}</td>
+                    <td>Marca</td>
+                    <td id="medidor">{{factura.medidor}}</td>
+                </tr>
+                <tr>
+                    <td>Tipo Calculo</td>
+                    <td id="metodo">{{factura.metodo}}</td>
+                </tr>
+            </table>
+            <table class="factura-ts-table">
+                <tr>
+                    <th><span class="squared-border">A</span></th>
+                    <th>TOTAL SERVICIO</th>
+                    <th id="monto_neto"> {{factura.monto_neto}}</th>
+                </tr>
+            </table>
+            <table class="factura-dds-table set-width-395">
+                <caption class="align-caption-right">DATOS DEL SERVICIO</caption>
+                <tr>
+                    <td>Codigo Proceso</td>
+                    <td id="codigo_proceso">{{factura.codigo_proceso}}</td>
+                </tr>
+                <tr>
+                    <td>Codigo Inmueble</td>
+                    <td id="cod_inmueble">{{factura.cod_inmueble}}</td>
+                </tr>
+                <tr>
+                    <td>Uso</td>
+                    <td id="clase_servicio">{{factura.clase_servicio}}</td>
+                    <td>Cupo Básico (m3)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Unidades</td>
+                    <td id="unidades">{{factura.unidades}}</td>
+                    <td>Suministros</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tarifa</td>
+                    <td></td>
+                    <td>Estrato</td>
+                    <td id="estrato">{{factura.estrato}}</td>
+                </tr>
+            </table>
+            <div class="factura-4th-section">
+                <table class="factura-zona-table">
+                    <caption>ZONA</caption>
+                    <tr>
+                        <td id="zona">{{factura.zona}}</td>
+                    </tr>
+                </table>
+                <table class="factura-fv-table">
+                    <caption>FECHA VENCIMIENTO</caption>
+                    <tr>
+                        <td id="fecha_venc">{{fecha_vencimiento}}</td>
+                    </tr>
+                </table>
+            </div>
+            <table class="factura-oc-table" id="oc-table-content">
+                <caption>OTROS CONCEPTOS</caption>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Cant.</th>
+                    <th>Precio</th>
+                    <th>Importe</th>
+                </tr>
+                 {{#each detallesb}}
+                 <tr>
+                    <td>{{detalle.descripcion_producto1}}</td>
+                    <td>{{detalle.cantidad}}</td>
+                    <td>{{detalle.precio}}</td>
+                    <td>{{detalle.importe}}</td>
+                </tr>
+                 {{/each}}
+            </table>
+            <table class="factura-aviso-table set-width-395">
+                <caption class="align-caption-right">AVISO</caption>
+                <tr>
+                    <td id="notas_1">
+                        {{factura.notas_1}}
+                    </td>
+                </tr>
+            </table>
+            <div class="ia-table-container">
+                <p class="total-otros-conceptos"><span class="squared-border">B</span>TOTAL OTROS CONCEPTOS</p>
+                <p>TOTAL FACTURA MES A+B <span id="importe_total">${{factura.importe_total}}</span></p>
+                <table class="factura-ia-table">
+                    <caption class="table-ia-caption">INFORMACION ADICIONAL</caption>
+                    <tr>
+                        <td>Blance Anterior</td>
+                        <td id="base_mora">{{factura.base_mora}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha Ultimo Pago</td>
+                        <td id="f_ult_pago">{{fecha_ultimo_pago}}</td>
+                    </tr>
+                    <tr>
+                        <td>Importe Ultimo Pago</td>
+                        <td id="monto_ult_pago">{{factura.monto_ult_pago}}</td>
+                    </tr>
+                </table>
+            </div>
+            <table class="factura-notas-table set-width-395">
+                <caption class="align-caption-right">NOTAS</caption>
+                <tr>
+                    <td id="notas_2">{{factura.notas_2}}</td>
+                </tr>
+            </table>
+            <div class="factura-last-section">
+                <div class="last-section-titles">
+                    <span>FACTURA DEL MES</span>
+                    <span>DEUDA ANTERIOR</span>
+                </div>
+                <div class="fdm-table-container">
+                    <table class="factura-fdm-table">
+                        <tr>
+                            <td>Nombre</td>
+                            <td id="nombre_cte2">{{factura.nombre_cte}}</td>
+                        </tr>
+                        <tr>
+                            <td>Codigo Sistema</td>
+                            <td id="id_contrato2">{{factura.id_contrato}}</td>
+                        </tr>
+                        <tr>
+                            <td>Codigo Proceso</td>
+                            <td id="codigo_proceso2">{{factura.codigo_proceso}}</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha Emision</td>
+                            <td id="fecha_documento">{{fecha_documento}}</td>
+                        </tr>
+                        <tr>
+                            <td>Factura No.</td>
+                            <td id="documento2">{{factura.documento}}</td>
+                        </tr>
+                        <tr>
+                            <td>Periodo</td>
+                            <td id="periodo2">{{factura.periodo}}</td>
+                        </tr>
+                        <tr>
+                            <td>Vencimiento</td>
+                            <td id="fecha_vencimiento">{{fecha_vencimiento}}</td>
+                        </tr>
+                        <tr>
+                            <td>Sello y Firma</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div>
+                        <img class="mini-logo-caasd" src="data:image/png;base64,{{factura.imgLogoCaasdAzul}}" alt="Logo" />
+                        <span>
+                            <img class="mini-texto-logo" src="data:image/png;base64,{{factura.imgtextoLogoCaasdAzul}}" alt="texto-Logo" />
+                        </span>
+                        <p>Favor no colocar sellos sobre el codigo de barras</p>
+                        <div class="factura-total-last-section">
+                            <p>TOTAL FACTURA</p>
+                            <p id="total_factura">{{importe_total}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="da-table-container">
+                    <table class="factura-da-table">
+                        <tr>
+                            <td>Nombre</td>
+                            <td id="nombre_cte3">{{factura.nombre_cte}}</td>
+                        </tr>
+                        <tr>
+                            <td>Codigo Sistema</td>
+                            <td id="id_contrato3">{{factura.id_contrato}}</td>
+                        </tr>
+                        <tr>
+                            <td>Codigo Proceso</td>
+                            <td id="codigo_proceso3">{{factura.codigo_proceso}}</td>
+                        </tr>
+                        <tr>
+                            <td>Sello y Firma</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div>
+                        <img class="mini-logo-caasd" src="data:image/png;base64,{{factura.imgLogoCaasdAzul}}" alt="Logo" />
+                        <span>
+                            <img class="mini-texto-logo" src="data:image/png;base64,{{factura.imgtextoLogoCaasdAzul}}" alt="texto-Logo" />
+                        </span>
+                        <p>Favor no colocar sellos sobre el codigo de barras</p>
+                        <div class="factura-total-last-section">
+                            <p>TOTAL DEUDA ANTERIOR</p>
+                            <p id="saldo_anterior">{{saldo_anterior}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
